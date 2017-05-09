@@ -4,8 +4,14 @@ import HomeView from '@/components/routeviews/home/HomeView.vue'
 import OrderView from '@/components/routeviews/order/OrderView.vue'
 import WarehouseView from '@/components/routeviews/warehouse/WarehouseView.vue'
 import TaskView from '@/components/routeviews/work/TaskView.vue'
+import LoginView from '@/components/login/LoginView.vue'
 
 const routes = [
+  {
+    path:'/login',
+    name:'LoginView',
+    component:LoginView
+  },
   {
     path: '/order',
     name: 'OrderView',

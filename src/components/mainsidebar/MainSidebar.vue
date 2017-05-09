@@ -7,10 +7,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="../../../static/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img :src='loginUser.img' class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{loginUser.username}}</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -54,7 +54,7 @@
           </a>
           <ul class="treeview-menu">
             <li>
-              <router-link to ="/task">任务</router-link>
+              <router-link to="/task">任务</router-link>
             </li>
           </ul>
         </li>
@@ -104,5 +104,18 @@
 </style>
 
 <script>
+  import $ from 'jquery'
+  export default{
+    data(){
+      return {
+        msg: 'main sidebar',
+      }
+    },
 
+    computed:{
+      loginUser(){
+        return this.$store.getters.getUser;
+      }
+    },
+  }
 </script>

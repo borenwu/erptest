@@ -7,7 +7,14 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  user: null,
+  user: {
+    img: 'static/img/nouser.png',
+    username: '',
+    role: '',
+    buttonLabel: '',
+    password:'',
+    company_name:''
+  },
   company:null,
   rootUrl:""
   // userInfo: {
@@ -30,7 +37,19 @@ const mutations = {
   },
 }
 
+const actions = {
+
+}
+
+const getters = {
+  getUser(state){
+    return state.user;
+  }
+}
+
 export default new Vuex.Store({
   state,
-  mutations
+  mutations,
+  actions,
+  getters
 })

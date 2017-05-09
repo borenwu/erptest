@@ -338,6 +338,13 @@
         searchOrders:[]
       }
     },
+
+    computed:{
+      loginUser(){
+        return this.$store.getters.getUser;
+      }
+    },
+
     methods: {
       todayOrder(){
         let vm = this
@@ -409,7 +416,7 @@
       },
 
       deleteOrder(id, sn, orders,index){
-        var vm = this;
+        let vm = this;
         $.ajax({
           type: 'post',
           url: vm.rootUrl + '/order/delete',
@@ -528,6 +535,8 @@
     },
     mounted(){
       const vm = this;
+
+      console.log('user: '+vm.loginUser.username)
 
       let company = this.$store.state.company
       vm.companyId = company.companyId

@@ -1,11 +1,11 @@
 <template>
-  <div id="app" class="wrapper">
-    <main-header></main-header>
-    <main-sidebar></main-sidebar>
-    <content-wrapper></content-wrapper>
-    <main-footer></main-footer>
-    <control-sidebar></control-sidebar>
-  </div>
+    <div id="app" class="wrapper">
+      <main-header></main-header>
+      <main-sidebar></main-sidebar>
+      <content-wrapper></content-wrapper>
+      <main-footer></main-footer>
+      <control-sidebar></control-sidebar>
+    </div>
 </template>
 
 <script>
