@@ -32,14 +32,14 @@
       <ul class="sidebar-menu">
         <li class="header">工具</li>
         <!-- Optionally, you can add icons to the links -->
-        <li>
+        <li :style="styleHome">
           <router-link to="/home">
             <i class="fa fa-dashboard"></i>
             <span>主页</span>
           </router-link>
         </li>
 
-        <li>
+        <li :style="styleOrder">
           <router-link to="/order">
             <i class="fa fa-folder"></i>
             <span>订单</span>
@@ -71,7 +71,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview" :style="styleFinance">
           <a href="#"><i class="fa fa-bar-chart"></i> <span>财务</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -100,7 +100,9 @@
 </template>
 
 <style>
-
+  .disabled {
+    pointer-events: none;
+  }
 </style>
 
 <script>
@@ -109,13 +111,37 @@
     data(){
       return {
         msg: 'main sidebar',
+
+        styleObj: {
+          pointerEvents: 'none'
+        },
+
       }
     },
 
-    computed:{
+    computed: {
       loginUser(){
         return this.$store.getters.getUser;
-      }
+      },
+      permision(){
+        return this.$store.getters.getPermison;
+      },
+      styleHome() {
+        let vm = this;
+        return {pointerEvents: vm.permision.home[vm.loginUser.role]}
+      },
+      styleOrder() {
+        let vm = this;
+        return {pointerEvents: vm.permision.order[vm.loginUser.role]}
+      },
+      styleFinance() {
+        let vm = this;
+        return {pointerEvents: vm.permision.finance[vm.loginUser.role]}
+      },
+
     },
+
+    mounted(){
+    }
   }
 </script>

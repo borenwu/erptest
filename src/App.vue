@@ -1,11 +1,11 @@
 <template>
-    <div id="app" class="wrapper">
-      <main-header></main-header>
-      <main-sidebar></main-sidebar>
-      <content-wrapper></content-wrapper>
-      <main-footer></main-footer>
-      <control-sidebar></control-sidebar>
-    </div>
+  <div id="app" class="wrapper">
+    <main-header></main-header>
+    <main-sidebar></main-sidebar>
+    <content-wrapper></content-wrapper>
+    <main-footer></main-footer>
+    <control-sidebar></control-sidebar>
+  </div>
 </template>
 
 <script>
@@ -21,6 +21,7 @@
   const id = appconfig.companyId
   const token = appconfig.companyToken
   const name = appconfig.companyName
+  const permision = appconfig.permision
 
   export default {
     name: 'app',
@@ -31,16 +32,17 @@
       MainFooter,
       ControlSidebar
     },
-    methods:{
+    methods: {
       setInit(){
         let store = this.$store
         let companyInfo = {
-          companyName:name,
+          companyName: name,
           companyId: id,
           token: token,
         }
         store.commit('SET_COMPANY', companyInfo)
         store.commit('SET_URL', rootUrl)
+        store.commit('SET_PERMISION', permision)
       }
     },
     created(){

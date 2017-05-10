@@ -474,6 +474,7 @@
             token: vm.token,
             id: id,
             sn: sn,
+            finish_by : vm.loginUser.username
           }
         }).done((resp) => {
           if (resp.status == "success") {

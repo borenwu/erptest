@@ -165,7 +165,6 @@
         let vm = this
         let user = this.$store.state.user
         if (user.username == '') {
-          console.log('no user')
           vm.loginUser.username = '未登录'
           vm.loginUser.role = '请登录'
           vm.loginUser.buttonLabel = '登录'

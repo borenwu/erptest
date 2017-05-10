@@ -1,6 +1,24 @@
 {
   "rootUrl":"http://192.168.0.109:5000",
   "companyName":"南通博奥信息科技有限公司",
-  "companyId":2,
-  "companyToken":"20170427133332"
+  "companyId":1,
+  "companyToken":"20170510101202",
+
+  "permision":{
+    "home":{
+      "1":"none",
+      "2":"none",
+      "3":"auto"
+    },
+    "order":{
+      "1":"auto",
+      "2":"auto",
+      "3":"auto"
+    },
+    "finance":{
+      "1":"none",
+      "2":"auto",
+      "3":"auto"
+    }
+  }
 }

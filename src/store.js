@@ -15,13 +15,10 @@ const state = {
     password:'',
     company_name:''
   },
+
+  permision:null,
   company:null,
   rootUrl:""
-  // userInfo: {
-  //   messages: [{1: 'test', 2: 'test'}],
-  //   notifications: [],
-  //   tasks: []
-  // }
 }
 
 
@@ -35,6 +32,9 @@ const mutations = {
   SET_URL (state, rootUrl) {
     state.rootUrl = rootUrl
   },
+  SET_PERMISION (state, permision) {
+    state.permision = permision
+  },
 }
 
 const actions = {
@@ -44,6 +44,9 @@ const actions = {
 const getters = {
   getUser(state){
     return state.user;
+  },
+  getPermison(state){
+    return state.permision
   }
 }
 

@@ -135,7 +135,12 @@
         orders: [],
       }
     },
-    computed: {},
+
+    computed:{
+      loginUser(){
+        return this.$store.getters.getUser;
+      }
+    },
     components: {},
 
     methods: {
@@ -216,7 +221,11 @@
       saleOrder(){
         console.log("sale order start!")
         let vm = this
-        let orderList = JSON.stringify(vm.orders)
+        let saleOrders = vm.orders.map(function(order) {
+          order.sale_by = vm.loginUser.username
+          return order;
+        });
+        let orderList = JSON.stringify(saleOrders)
         $.ajax({
           type: 'post',
           url: vm.rootUrl+'/order/sale',
